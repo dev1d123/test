@@ -1,1 +1,0 @@
-(Diapositiva 4) -> Se crea el entorno virtual cuyo nombre es "proyecto", se activa el entorno y se instala Django en este entorno.
