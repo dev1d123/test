@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Template Base</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+   <h1>Hola mundo desde Django</h1> 
+   <h2>Con templates</h2>
+   
+   <p><strong>Usuario:</strong> {{ request.user }}</p>
+   <p><strong>Autenticado:</strong> {{ request.user.is_authenticated }}</p>
+   <p><strong>Email del usuario:</strong> {{ request.user.email }}</p>
+   
+   <h3>Información de la solicitud (request):</h3>
+   <p><strong>Método HTTP:</strong> {{ request.method }}</p>
+   <p><strong>URL completa:</strong> {{ request.build_absolute_uri }}</p>
+   <p><strong>Ruta:</strong> {{ request.path }}</p>
+   <p><strong>GET params:</strong> {{ request.GET }}</p>
+   <p><strong>POST params:</strong> {{ request.POST }}</p>
+   <p><strong>Cabeceras HTTP:</strong> {{ request.headers }}</p>
+   <p><strong>Dirección IP del cliente:</strong> {{ request.META.REMOTE_ADDR }}</p>
+
+    {% endblock %}
+</body>
+</html>
