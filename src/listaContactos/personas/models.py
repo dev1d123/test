@@ -5,4 +5,5 @@ class Persona(models.Model):
     nombres = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     edad = models.IntegerField()#(max_digits=3)
-    #respondiendo pregunta diapositiva 4
+    donador = models.BooleanField() 
+    #respondiendo pregunta diapositiva 5
