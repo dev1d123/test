@@ -2,7 +2,23 @@
 <html>
 <head>
     <title>Ejemplo con CSS y JavaScript</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: navy;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,6 +28,10 @@
 
     <button onclick="cambiarTexto()">Cambiar Texto</button>
 
-    <script src="js/script.js"></script>
+    <script>
+        function cambiarTexto() {
+            document.getElementById("demo").innerHTML = "¡Texto cambiado con JavaScript!";
+        }
+    </script>
 </body>
 </html>
