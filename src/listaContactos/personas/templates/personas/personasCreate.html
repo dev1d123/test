@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<form method='POST'> {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value='Grabar'>
+<form action='.' method='GET'>
+    <input type="text" name='q' placeholder='buscar'>
+    <input type="submit" value="buscar">
 </form>
 
 {% endblock %}
