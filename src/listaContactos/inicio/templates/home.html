@@ -8,7 +8,13 @@
     {% block content %}
    <h1>Hola mundo desde Django</h1> 
    <h2>Con templates</h2>
-   
+    <p>
+        {{myText}},
+        {{myNumber}}
+    </p>
+
+
+
    <p><strong>Usuario:</strong> {{ request.user }}</p>
    <p><strong>Autenticado:</strong> {{ request.user.is_authenticated }}</p>
    <p><strong>Email del usuario:</strong> {{ request.user.email }}</p>
