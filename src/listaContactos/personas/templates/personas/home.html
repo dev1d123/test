@@ -1,0 +1,31 @@
+<!-- myapp/templates/myapp/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ "about us"|title }}</title>
+</head>
+<body>
+    <h1>{{ myText|upper|truncatechars:"16" }}</h1>
+    <p>Number: {{ myNumber|floatformat:2 }}</p>
+    
+    <h2>{{ "list of numbers"|upper }}</h2>
+    <ul>
+        {% for myItem in myList %}
+            <li>{{ forloop.counter|stringformat:"d" }} - {{ myItem|add:2 }}
+                {% if myItem == 33 %}
+                    - {{ "este número es mágico"|upper }}
+                {% elif myItem|divisibleby:2 %}
+                    - {{ "este número es par"|upper }}
+                {% elif myItem > 50 %}
+                    - {{ "este número es mayor que 50"|upper }}
+                {% elif myItem < 40 %}
+                    - {{ "este número es menor que 40"|upper }}
+                {% elif 40 <= myItem <= 50 %}
+                    - {{ "este número está entre 40 y 50"|upper }}
+                {% endif %}
+
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
