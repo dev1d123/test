@@ -12,9 +12,28 @@
         {{myText}},
         {{myNumber}}
     </p>
+    <p>Prueba forLoop.counter</p>
     <ul>
         {% for myItem in myList %}
             <li>{{forloop.counter}} - {{ myItem }}</li>
+        {% endfor %}
+    </ul>
+    <p>Prueba forLoop.revcounter</p>
+    <ul>
+        {% for myItem in myList %}
+            <li>{{forloop.revcounter}} - {{ myItem }}</li>
+        {% endfor %}
+    </ul>
+    <p>Prueba forLoop.first</p>
+    <ul>
+        {% for myItem in myList %}
+            <li>{{forloop.first}} - {{ myItem }}</li>
+        {% endfor %}
+    </ul>
+    <p>Prueba forLoop.last</p>
+    <ul>
+        {% for myItem in myList %}
+            <li>{{forloop.last}} - {{ myItem }}</li>
         {% endfor %}
     </ul>
 
