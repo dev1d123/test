@@ -5,17 +5,17 @@
     <title>{{ "about us"|title }}</title>
 </head>
 <body>
-    <h1>{{ myText|capfirst }}</h1>
+    <h1>{{ myText|upper|truncatechars:"16" }}</h1>
     <p>Number: {{ myNumber|floatformat:2 }}</p>
     
     <h2>{{ "list of numbers"|upper }}</h2>
     <ul>
         {% for myItem in myList %}
-            <li>{{ forloop.counter|stringformat:"d" }} - {{ myItem|stringformat:"d" }}
+            <li>{{ forloop.counter|stringformat:"d" }} - {{ myItem|add:2 }}
                 {% if myItem == 33 %}
                     - {{ "este número es mágico"|upper }}
-                {% elif myItem > 70 %}
-                    - {{ "este número es muy alto"|upper }}
+                {% elif myItem|divisibleby:2 %}
+                    - {{ "este número es par"|upper }}
                 {% elif myItem > 50 %}
                     - {{ "este número es mayor que 50"|upper }}
                 {% elif myItem < 40 %}
@@ -23,11 +23,7 @@
                 {% elif 40 <= myItem <= 50 %}
                     - {{ "este número está entre 40 y 50"|upper }}
                 {% endif %}
-                <!-- Añadiendo filtros creativos -->
-                <br>
-                Filtered Text: {{ myItem|stringformat:"d"|center:10 }} <br>
-                Length: {{ myItem|stringformat:"d"|length }} <br>
-                Hexadecimal: {{ myItem|floatformat:0|add:"0"|iriencode }}
+
             </li>
         {% endfor %}
     </ul>
