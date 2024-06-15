@@ -7,7 +7,6 @@ def myHomeView(request, *args, **kwargs):
         'myNumber': 123,
         'myList' : {33,44,55,66,77},
         'myDict': {'clave1': 'valor1', 'clave2': 'valor2', 'clave3': 'valor3'},
-
     }
     return render(request, "home.html", myContext)
 

@@ -36,7 +36,14 @@
             <li>{{forloop.last}} - {{ myItem }}</li>
         {% endfor %}
     </ul>
-
+    <h2>Dictionary Items</h2>
+    <ul>
+        {% for key, value in myDict.items %}
+            <li>{{ forloop.counter }}. {{ key }}: {{ value }}</li>
+        {% empty %}
+            <li>No items available.</li>
+        {% endfor %}
+    </ul>
 
 
    <p><strong>Usuario:</strong> {{ request.user }}</p>
