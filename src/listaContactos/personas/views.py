@@ -4,6 +4,7 @@ from .forms import PersonaForm, RawPersonaForm
 from django.views.generic.list import (
     ListView,
     DetailView,
+    CreateView,
 )
 
 # Create your views here.
@@ -59,6 +60,15 @@ class PersonaListView(ListView):
 
 class PersonaDetailView(DetailView):
     model = Persona
+
+class PersonaCreateView(CreateView):
+    model = Persona
+    fields = [
+        'nombres',
+        'apellidos',
+        'edad',
+        'donador'
+    ]
 
 
 def personasDeleteView(request, myID):
