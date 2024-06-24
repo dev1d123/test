@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
@@ -9,7 +10,6 @@ from django.views.generic.list import (
     UpdateView,
     DeleteView,
 )
-
 # Create your views here.
 def personasAnotherCreateView(request):
     form = RawPersonaForm() #request.GET
@@ -85,8 +85,10 @@ class PersonaDeleteView(DeleteView):
     model = Persona
     success_url = reverse_lazy('personas:persona-list')
 
-
-
+class PersonaQueryView(View):
+    def get(self, reuquest, *args, **kwargs):
+        queryset = Persona.object.filter(edad_lte='40')
+        return JsonResponse(list(queryset.values()), safe = False)
 
 def personasDeleteView(request, myID):
     obj = get_object_or_404(Persona, id = myID)
