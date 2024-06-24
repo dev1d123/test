@@ -3,6 +3,7 @@ from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
 from django.views.generic.list import (
     ListView,
+    DetailView,
 )
 
 # Create your views here.
@@ -54,6 +55,11 @@ def searchForHelp(request):
 
 class PersonaListView(ListView):
     model = Persona
+    queryset = Persona.objects.filter(edad__lte='40')
+
+class PersonaDetailView(DetailView):
+    model = Persona
+
 
 def personasDeleteView(request, myID):
     obj = get_object_or_404(Persona, id = myID)

@@ -3,7 +3,6 @@ from .views import(
     PersonaListView,
     PersonaDetailView,
 )
-app_name = 'personas'
 
 urlpatterns = [
     path('', PersonaListView.as_view(), name = 'persona-list'),
