@@ -7,4 +7,4 @@ class Persona(models.Model):
     edad = models.IntegerField()#(max_digits=3)
     donador = models.BooleanField(blank=False) 
     def get_absolute_url(self):
-        return reverse('browsing', kwargs={'myID': self.id})
+        return reverse('personas: persona-detail', kwargs={'pk': self.id})
