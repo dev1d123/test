@@ -20,7 +20,7 @@ from inicio.views import myHomeView
 from inicio.views import anotherView
 from personas.views import personaTestView
 from personas.views import personaCreateView, searchForHelp
-from personas.views import personasAnotherCreateView
+from personas.views import personasAnotherCreateView, personasShowObject
 urlpatterns = [
     path('', myHomeView, name='Pagina de Inicio'),
     path('another/', anotherView),
@@ -32,4 +32,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     
+    path('personas/<int:myID>/', personasShowObject, name='otro'),
+
 ]
