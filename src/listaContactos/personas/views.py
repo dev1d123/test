@@ -18,7 +18,8 @@ def personasAnotherCreateView(request):
     return render(request, 'personas/personasCreate.html', context)
 
 def personaCreateView(request):
-    form = PersonaForm(request.POST or None)
+    obj = Persona.objects.get(id = 2)
+    form = PersonaForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
         form = PersonaForm()
@@ -27,6 +28,8 @@ def personaCreateView(request):
         'form': form
     }
     return render(request, 'personas/personasCreate.html', context)
+
+
 def personaTestView(request):
     obj = Persona.objects.get(id=1)
     context = {
